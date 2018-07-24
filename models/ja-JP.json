@@ -1,0 +1,225 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "日本橋ランチ情報",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "RecommendIntent",
+                    "slots": [
+                        {
+                            "name": "genre",
+                            "type": "genreList"
+                        }
+                    ],
+                    "samples": [
+                        "{genre}",
+                        "{genre} 店を教えて",
+                        "{genre} 屋を教えて",
+                        "{genre} 情報",
+                        "{genre} の情報",
+                        "{genre} の店の情報",
+                        "{genre} の店の情報を教えて",
+                        "{genre} の情報を教えて",
+                        "{genre} は何",
+                        "{genre} はどこ",
+                        "{genre} を教えて",
+                        "{genre} のおすすめはどこ",
+                        "{genre} のおすすめの店はどこ",
+                        "{genre} のおすすめの店を教えて",
+                        "おすすめの {genre} 店を教えて",
+                        "おすすめの {genre} 屋を教えて",
+                        "おすすめの {genre} の店の情報を教えて",
+                        "おすすめの {genre} の情報を教えて",
+                        "おすすめの {genre} はどこ",
+                        "おすすめの {genre} の店はどこ",
+                        "おすすめの {genre} のお店を教えて",
+                        "おすすめの店の情報を教えて",
+                        "おすすめはどこ",
+                        "おすすめは何",
+                        "おすすめの店はどこ",
+                        "おすすめを教えて",
+                        "おすすめの店を教えて"
+                    ]
+                },
+                {
+                    "name": "AMAZON.MoreIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateSettingsIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PreviousIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "genreList",
+                    "values": [
+                        {
+                            "id": "09",
+                            "name": {
+                                "value": "イタリアン",
+                                "synonyms": [
+                                    "ピザ",
+                                    "スパゲティ",
+                                    "パスタ"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "08",
+                            "name": {
+                                "value": "カレー",
+                                "synonyms": [
+                                    "カリー",
+                                    "ナン",
+                                    "インド",
+                                    "インド料理"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "07",
+                            "name": {
+                                "value": "中華",
+                                "synonyms": [
+                                    "チャーハン",
+                                    "餃子",
+                                    "ラーメン",
+                                    "中華料理"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "06",
+                            "name": {
+                                "value": "洋食",
+                                "synonyms": [
+                                    "グラタン",
+                                    "ハンバーグ",
+                                    "ハヤシライス",
+                                    "オムライス",
+                                    "洋食レストラン"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "05",
+                            "name": {
+                                "value": "アジアン",
+                                "synonyms": [
+                                    "パッタイ",
+                                    "トムヤンクン",
+                                    "ポー"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "04",
+                            "name": {
+                                "value": "カフェ",
+                                "synonyms": [
+                                    "デザート",
+                                    "カフェオレ",
+                                    "コーヒー",
+                                    "パフェ",
+                                    "ケーキ",
+                                    "パンケーキ",
+                                    "スイーツ"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "03",
+                            "name": {
+                                "value": "焼肉",
+                                "synonyms": [
+                                    "ステーキ"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "02",
+                            "name": {
+                                "value": "和食",
+                                "synonyms": [
+                                    "魚",
+                                    "刺身",
+                                    "焼きそば",
+                                    "お好み焼き",
+                                    "天ぷら",
+                                    "蕎麦",
+                                    "うどん",
+                                    "しゃぶしゃぶ",
+                                    "すき焼き",
+                                    "寿司"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "01",
+                            "name": {
+                                "value": "韓国料理",
+                                "synonyms": [
+                                    "スントゥブチゲ",
+                                    "クッパ",
+                                    "プルコギ",
+                                    "石焼ビビンバ",
+                                    "サムゲタン",
+                                    "チゲ"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

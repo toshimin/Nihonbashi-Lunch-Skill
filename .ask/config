@@ -1,0 +1,19 @@
+{
+  "deploy_settings": {
+    "default": {
+      "skill_id": "amzn1.ask.skill.08f173b8-5d56-479d-819a-b7f4fa88d888",
+      "was_cloned": true,
+      "merge": {
+        "manifest": {
+          "apis": {
+            "custom": {
+              "endpoint": {
+                "uri": "arn:aws:lambda:ap-northeast-1:406650237351:function:NihonbashiLunch"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
