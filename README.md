@@ -29,6 +29,7 @@ URL: [https://devofphia.cybozu.com/](https://devofphia.cybozu.com/)
 もし日本橋界隈のランチのお店をご存知でしたらレコードを追加してみてください。
 
 尚、このkintoneアプリのテンプレートはこちらから[ダウンロード](https://github.com/toshimin/Nihonbashi-Lunch-Skill/blob/master/kintoneApp/LunchAppTemplate.zip)できます。
+kintoneアプリに読み込み可能なkintoneデータファイルはこちらから[ダウンロード](https://github.com/toshimin/Nihonbashi-Lunch-Skill/blob/master/%E6%97%A5%E6%9C%AC%E6%A9%8B%E3%83%A9%E3%83%B3%E3%83%81%E6%83%85%E5%A0%B1%E3%83%87%E3%83%BC%E3%82%BF(UTF-8).csv)できます。
 
 ## 2. kintoneアプリに音声インターフェースを追加する
 
