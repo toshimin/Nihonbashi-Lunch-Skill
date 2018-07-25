@@ -24,7 +24,6 @@ URL: [https://devofphia.cybozu.com/](https://devofphia.cybozu.com/)
 |alexa.student.01|alexa##2018|
 |alexa.student.02|alexa##2018|
 |alexa.student.03|alexa##2018|
-|alexa.student.04|alexa##2018|
 
 もし日本橋界隈のランチのお店をご存知でしたらレコードを追加してみてください。
 
@@ -44,7 +43,9 @@ kintoneアプリに読み込み可能なkintoneデータファイルはこちら
 
 といった自然な問いかけとするだけでおすすめのお店を教えてくれるのです。素敵でしょ？
 
-Alexaを使ってこんなスキルを作ってみたいと思います。
+Alexaを使ってこんなスキルを作ってみたいと思います。出来上がりはこんな感じになります。
+
+[https://youtu.be/c5nW_yLpKGw](https://youtu.be/c5nW_yLpKGw)
 
 ## 3. Alexaスキルの概要
 
