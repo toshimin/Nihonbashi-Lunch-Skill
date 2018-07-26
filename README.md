@@ -139,7 +139,6 @@ Alexaスキルを開発は、以下のステップで行います。
 1. 同じ要求（インテント）をしている会話をグループ化しましょう。
 2. 会話の中でパラメータになりうる単語（スロット）の部分を丸で囲みましょう。
  
-----
 * 「おすすめのお店の情報を教えて欲しい」という要求に RecommendIntentという名前をつけます。
 
 
@@ -161,7 +160,7 @@ Alexaスキルを開発は、以下のステップで行います。
 	![](images/add_custom_intent.png)
 7. 課題3で書き出したおすすめのお店の情報を要求する言い方の例をできるだけ多く入力します。(最低10個、一括編集機能を使うと素早く入力できます）
 	![](images/add_sample_utterances.png)
-8. 次にスロットに相当する文字列の部分を選択します。するとポップアップ画面が表示されます。新しいスロットを作成の入力枠に「genre」と入力し「追加」ボタンをクリックします。他のサンプル発話も同様にスロットの部分を **{genre}**となるように変更します。
+8. 次にスロットに相当する文字列の部分を選択します。するとポップアップ画面が表示されます。新しいスロットを作成の入力枠に「genre」と入力し「追加」ボタンをクリックします。他のサンプル発話も同様にスロットの部分を {genre} となるように変更します。
 	![](images/add_slot.png)
 9. インテントスロットの表示部分をクリックすると、以下のような画面になるはずです。次に、左のパネルのスロットタイプの右横の「追加」ボタンをクリックします。
 	![](images/add_slottype.png)
@@ -211,6 +210,47 @@ Alexaスキルを開発は、以下のステップで行います。
 4. 「エンドポイントの保存」ボタンをクリックします。
 5. 以上で、スキルは概ね完成です。
 
+
+#### 4-5-1 ASK SDK と kintone SDK
+
+今回のスキルは、エンドポイント(サーバーアプリケーション)にAmazon Web ServiceのLambdaというサーバーレスアプリケーションを構築できるサービスを使用し、開発言語にNode.jsを使用しています。
+
+Alexa及びkintone共に、簡単にAPIを呼び出せるようにするNode.js用の開発ライブラリ(SDK)を公式に提供しています。これらを利用すると比較的簡単に効率よくプログラミングすることができます。
+
+今回はプログラミング方法については触れませんが、詳しくは以下のリンクを参照してください。
+
+* [Alexa Skills Kit SDK for Node.js](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs/blob/2.0.x/README.ja.md)
+* [kintone API SDK(β) fpr Node.js](https://developer.cybozu.io/hc/ja/articles/360000511243-kintone-API-SDK-%CE%B2-for-Node-js)
+
+日本橋ランチ情報スキルのNode.jsのコードは以下を参照してください。
+[lambda/custom/index.js](https://github.com/toshimin/Nihonbashi-Lunch-Skill/blob/master/lambda/custom/index.js)
+
+### 4-5-2 kintone APIトークンとLambdaの環境変数へのアクセス
+
+Node.jsからkintone APIを使用する際は、kintoneアプリに対してアクセスするためのユーザー認証を行う必要があります。kintone REST APIでは、パスワード認証とAPIトークン認証をサポートしています。
+
+今回のスキルでは、APIトークン認証を使用して、Alexaスキルからkintoneアプリにアクセスしデータを取得しています。
+
+kinoneアプリのAPIトークンは、kintoneアプリの設定画面の「APIトークン」から発行することができます。
+
+![](images/kintone_app_setting.png)
+	
+![](images/kintone_api_token.png)
+
+さて、Lambdaのプログラムコードではkintone APIトークンを使用してkintoneアプリにアクセスしますが、コードの中に直接記述してしまうと、コードの汎用性を失うと同時にセキュリティ上の問題があります。
+
+そこで、Lambdaの環境変数にkintone APIトークンを設定して、プログラムコードではそれを参照するようにしています。Lambdaを使用する際にはオススメの方法です。
+
+![](images/lambda_env.png)
+
+Node.jsのコード内からLambdaの環境変数を取得するには、以下のように記述します。
+
+```index.js
+// Lambdaの環境変数からKintoneデータベースへの認証情報を取得
+const APIToken = process.env['Kintone_APIToken'];
+const DomainName = process.env['Kintone_DomainName'];
+const AppID = process.env['Kintone_AppID'];
+```
 
 ### 4-6 AlexaシミュレーターまたはEchoデバイスを使ってテストをする
 
