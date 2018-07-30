@@ -24,7 +24,7 @@ const genres = {
     '07':'中華',
     '08':'カレー',
     '09':'イタリアン'
-}
+};
 
 // ジャンルメニューに表示する項目
 const genre_title = 'ジャンルの選択';
@@ -37,63 +37,63 @@ const textContent1 = new Alexa.PlainTextContentHelper()
 const listItem1 = {
     token : '韓国料理',
     textContent : textContent1
-}
+};
 const textContent2 = new Alexa.PlainTextContentHelper()
     .withPrimaryText('和食')
     .getTextContent();
 const listItem2 = {
     token : '和食',
     textContent : textContent2
-}
+};
 const textContent3 = new Alexa.PlainTextContentHelper()
     .withPrimaryText('焼肉')
     .getTextContent();
 const listItem3 = {
     token : '焼肉',
     textContent : textContent3
-}
+};
 const textContent4 = new Alexa.PlainTextContentHelper()
     .withPrimaryText('カフェ')
     .getTextContent();
 const listItem4 = {
     token : 'カフェ',
     textContent : textContent4
-}
+};
 const textContent5 = new Alexa.PlainTextContentHelper()
     .withPrimaryText('アジアン')
     .getTextContent();
 const listItem5 = {
     token : 'アジアン',
     textContent : textContent5
-}
+};
 const textContent6 = new Alexa.PlainTextContentHelper()
     .withPrimaryText('洋食')
     .getTextContent();
 const listItem6 = {
     token : '洋食',
     textContent : textContent6
-}
+};
 const textContent7 = new Alexa.PlainTextContentHelper()
     .withPrimaryText('中華')
     .getTextContent();
 const listItem7 = {
     token : '中華',
     textContent : textContent7
-}
+};
 const textContent8 = new Alexa.PlainTextContentHelper()
     .withPrimaryText('カレー')
     .getTextContent();
 const listItem8 = {
     token : 'カレー',
     textContent : textContent8
-}
+};
 const textContent9 = new Alexa.PlainTextContentHelper()
     .withPrimaryText('イタリアン')
-    .getTextContent()
+    .getTextContent();
 const listItem9 = {
     token : 'イタリアン',
     textContent : textContent9
-}
+};
 
 // ジャンルメニューを表示するテンプレート
 const genre_template = {
@@ -115,11 +115,11 @@ const genre_template = {
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
-        return handlerInput.requestEnvelope.request.type === 'LaunchRequest'
+        return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput){
-        speechOutput = "「和食」「洋食」「中華料理」のようにジャンルを言うか、「オムライス」のように食べたいランチメニューを言ってみてください";
-        speechPrompt = "「中華」などのジャンル、もしくは食べたい物を言ってみて";
+        let speechOutput = "「和食」「洋食」「中華料理」のようにジャンルを言うか、「オムライス」のように食べたいランチメニューを言ってみてください";
+        let speechPrompt = "「中華」などのジャンル、もしくは食べたい物を言ってみて";
         if(supportsDisplay(handlerInput)){
             // ディスプレイ付きのデバイスの場合の表示
             handlerInput.responseBuilder.addRenderTemplateDirective(genre_template).withShouldEndSession(false);
@@ -129,7 +129,7 @@ const LaunchRequestHandler = {
             .reprompt(speechPrompt)
             .getResponse();
     }
-}
+};
 
 const RecommendIntentHandler = {
     canHandle(handlerInput) {
@@ -325,14 +325,14 @@ const SessionEndedRequestHandler = {
 
 const ErrorHandler = {
     canHandle () {
-      return true
+      return true;
     },
     handle (handlerInput, error) {
-      console.log(`Error handled: ${error.message}`)
+      console.log(`Error handled: ${error.message}`);
       const message = "すみません、なんだかうまく行かないようです。もう一度お試しください。";
       return handlerInput.responseBuilder
         .speak(message)
-        .getResponse()
+        .getResponse();
     }
 }
 
@@ -358,7 +358,7 @@ function supportsDisplay(handlerInput)
     handlerInput.requestEnvelope.context.System &&
     handlerInput.requestEnvelope.context.System.device &&
     handlerInput.requestEnvelope.context.System.device.supportedInterfaces &&
-    handlerInput.requestEnvelope.context.System.device.supportedInterfaces.Display
+    handlerInput.requestEnvelope.context.System.device.supportedInterfaces.Display;
     return hasDisplay;
 }
 
